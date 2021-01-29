@@ -1,5 +1,8 @@
 import time
+import os
 
+
+file_path = os.path.join(os.getcwd(), "funcresult.txt")
 
 def timecalc(func):
     start = time.time()
@@ -14,4 +17,5 @@ def my_func():
         print(i)
         time.sleep(1)
 
-print(my_func)
+with open("funcresult.txt", "w") as text_file:
+    text_file.write(str(my_func))
